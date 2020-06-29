@@ -23,7 +23,7 @@ export const Heroe = ({ history }) => {
       <div className="row mt-3">
         <div className="col-md-4" style={{}}>
           <img
-            src={`/assets/heroes/${id}.jpg`}
+            src={`./assets/heroes/${id}.jpg`}
             className="animate__animated animate__bounceInUp card-img"
             alt={superhero}
           />

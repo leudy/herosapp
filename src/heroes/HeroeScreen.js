@@ -1,14 +1,23 @@
 import React from "react";
-import { useParams, Redirect, Link } from "react-router-dom";
+import { useParams, Redirect, useHistory } from "react-router-dom";
 import { getHeroesByI } from "../repositories/HeroesRepository";
 
-export const Heroe = ({ history }) => {
+export const HeroeScreen = () => {
+  const history = useHistory();
   console.log(history);
   const { heroeid } = useParams();
   const heroe_response = getHeroesByI(heroeid);
   if (!heroe_response) {
     return <Redirect to="/" />;
   }
+  const handleBack = () => {
+    if (history.length <= 2) {
+      history.push("/");
+    } else {
+      history.goBack();
+    }
+  };
+
   const {
     id,
     superhero,
@@ -23,7 +32,7 @@ export const Heroe = ({ history }) => {
       <div className="row mt-3">
         <div className="col-md-4" style={{}}>
           <img
-            src={`./assets/heroes/${id}.jpg`}
+            src={`/assets/heroes/${id}.jpg`}
             className="animate__animated animate__bounceInUp card-img"
             alt={superhero}
           />
@@ -33,7 +42,7 @@ export const Heroe = ({ history }) => {
           <ul className="list-group list-group-flush">
             <li className="list-group-item">
               {" "}
-              <b>Author:</b> {publisher}
+              <b>Pulisher:</b> {publisher}
             </li>
             <li className="list-group-item">
               {" "}
@@ -47,12 +56,7 @@ export const Heroe = ({ history }) => {
           </ul>
           <h5>Characters</h5>
           <p>{characters}</p>
-          <button
-            className="btn btn-outline-success"
-            onClick={() => {
-              history.goBack();
-            }}
-          >
+          <button className="btn btn-outline-success" onClick={handleBack}>
             Return
           </button>
         </div>

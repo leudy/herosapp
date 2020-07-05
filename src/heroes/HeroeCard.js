@@ -12,7 +12,7 @@ export const HeroeCard = ({
   return (
     <>
       <div className="">
-        <div className="card ms-3" style={{ maxWidth: 540 }}>
+        <div className="card ms-3 mt-2" style={{ maxWidth: 540 }}>
           <div className="row no-gutters">
             <div className="col-md-4">
               <img

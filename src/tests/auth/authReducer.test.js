@@ -7,7 +7,6 @@ const state = {
 describe("Probando el AutReducer", () => {
   test("debe de retornar el estado por defecto", () => {
     const result = authReducer(state, {});
-    // console.log(result);
     expect(result).toEqual({ name: "leudi" });
   });
   test("debe de autenticar y colocar el name del usuario y devolver el valor de logeado en true", () => {
@@ -17,9 +16,7 @@ describe("Probando el AutReducer", () => {
         name: "Leo",
       },
     };
-
     const result = authReducer({ logged: false }, action);
-    //console.log(result);
     expect(result).toEqual({ name: "Leo", logged: true });
   });
   test("debe de borrar la cuenta de usuario", () => {

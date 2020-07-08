@@ -16,6 +16,7 @@ export const SearchComponent = ({ history }) => {
   const [form, handleTextChange] = useForm(initialState);
   const data = useMemo(() => getHeroeByFilter(q), [q]);
   const { criteriaText } = form;
+  
   const handleSubmit = (f) => {
     f.preventDefault();
     const filter = `?q=${criteriaText}`;
@@ -50,13 +51,14 @@ export const SearchComponent = ({ history }) => {
           <hr />
           {q === "" && (
             <div className="alert alert-info">
-              <p>there is no a heroe</p>
+              <p>Search a heroe</p>
             </div>
           )}
 
           {q !== "" && data.length === 0 && (
             <div className="alert alert-danger">
-              <p>there is no a heroe whit {q}</p>
+              <p>
+              there is no a heroe with {q} </p>
             </div>
           )}
 

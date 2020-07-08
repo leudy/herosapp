@@ -9,8 +9,11 @@ export const LoginScreen = ({ history }) => {
     if (root === "/") {
       localStorage.removeItem("param");
     }
-    if (root !== "/") {
-      root = root + localStorage.getItem("param") || "";
+    if (root !== "/" || root.length > 1) {
+      if(localStorage.getItem('param')!==null)
+      {
+        root = root + localStorage.getItem("param") || "";
+      }
     }
     dispatch({
       type: types.LOGIN,
@@ -22,6 +25,7 @@ export const LoginScreen = ({ history }) => {
   return (
     <div className="container">
       <h1>Login</h1>
+      <p></p>
       <hr />
       <div className="col-md-12">
         <div className="col-md-4"></div>

@@ -1,0 +1,3 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Prueba del <AppRoute .></AppRoute> deberia de retornar el login si no esta logeado  1`] = `ReactWrapper {}`;

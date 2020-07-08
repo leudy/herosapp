@@ -1,0 +1,5 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Probando el <Search /> Probar el display por default 1`] = `ReactWrapper {}`;
+
+exports[`Probando el <Search /> should be a text error if url is wrong like as232212 1`] = `ReactWrapper {}`;
